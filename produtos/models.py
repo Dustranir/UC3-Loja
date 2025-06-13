@@ -26,7 +26,7 @@ from django.db import models
 from django.utils import timezone
 
 class Produto(models.Model):
-    codigo = models.IntegerField(primary_key=True)
+    codigo = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=70)
     preco_compra = models.FloatField()
     preco_venda = models.FloatField()

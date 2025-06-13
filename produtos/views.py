@@ -20,7 +20,7 @@ def produto_delete(request, pk):
     produto = get_object_or_404(Produto, pk=pk)
     if request.method == 'POST':
         produto.delete()
-        return redirect('list')  # Ou 'produto_list' dependendo do nome da url da lista
+        return redirect('produto_list')  
     return render(request, 'produtos/deletar_produto.html', {'produto': produto})
 
 

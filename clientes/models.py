@@ -24,7 +24,7 @@ class Cliente(models.Model):
         ('F', 'Fax'),
     ]
 
-    cpf = models.CharField(max_length=11, primary_key=True)
+    cpf = models.CharField(max_length=11, primary_key=True, unique=True)
     nome = models.CharField(max_length=70)
     endereco = models.CharField(max_length=100)
     telefone = models.CharField(max_length=11)
