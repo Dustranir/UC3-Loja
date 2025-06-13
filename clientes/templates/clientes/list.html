@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Clientes</h2>
+    <a href="{% url 'cliente_create' %}" class="btn btn-primary mb-3">+ Cadastrar Novo Cliente</a>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>CPF</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Estado</th>
+                <th>Cidade</th>
+                <th>Gênero</th>
+                <th>E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.cpf }}</td>
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.telefone }}</td>
+                <td>{{ cliente.estado }}</td>
+                <td>{{ cliente.cidade }}</td>
+                <td>{{ cliente.genero }}</td>
+                <td>{{ cliente.email }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

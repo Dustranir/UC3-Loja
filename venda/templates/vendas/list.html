@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Vendas</h2>
+    <a href="{% url 'venda_create' %}" class="btn btn-primary mb-3">+ Registrar Nova Venda</a>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Código</th>
+                <th>Cliente</th>
+                <th>Produto</th>
+                <th>Data</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for venda in vendas %}
+            <tr>
+                <td>{{ venda.id }}</td>
+                <td>{{ venda.cliente }}</td>
+                <td>{{ venda.produto }}</td>
+                <td>{{ venda.data }}</td>
+                <td>R$ {{ venda.valor }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
