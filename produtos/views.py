@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Produto
 from .forms import ProdutoForm
 
@@ -15,4 +15,13 @@ def produto_create(request):
     else:
         form = ProdutoForm()
     return render(request, 'produtos/cadastro.html', {'form': form})
+
+def produto_delete(request, pk):
+    produto = get_object_or_404(Produto, pk=pk)
+    if request.method == 'POST':
+        produto.delete()
+        return redirect('list')  # Ou 'produto_list' dependendo do nome da url da lista
+    return render(request, 'produtos/deletar_produto.html', {'produto': produto})
+
+
 
