@@ -15,3 +15,6 @@ def fornecedor_create(request):
     else:
         form = FabricanteForm()
     return render(request, 'fornecedores/cadastro.html', {'form': form})
+
+def index(request):
+    return render(request, 'fornecedores/index.html')

@@ -15,3 +15,4 @@ def produto_create(request):
     else:
         form = ProdutoForm()
     return render(request, 'produtos/cadastro.html', {'form': form})
+

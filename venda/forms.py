@@ -4,4 +4,4 @@ from .models import Venda
 class VendaForm(forms.ModelForm):
     class Meta:
         model = Venda
-        fields = '__all__'
+        fields = ['cliente', 'produto', 'quantidade']

@@ -2,10 +2,6 @@ from django.shortcuts import render, redirect
 from .models import Venda
 from .forms import VendaForm
 
-def venda_list(request):
-    vendas = Venda.objects.all()
-    return render(request, 'venda/list.html', {'vendas': vendas})
-
 def venda_create(request):
     if request.method == 'POST':
         form = VendaForm(request.POST)
@@ -14,4 +10,11 @@ def venda_create(request):
             return redirect('venda_list')
     else:
         form = VendaForm()
-    return render(request, 'venda/cadastro.html', {'form': form})
+    return render(request, 'venda/venda_form.html', {'form': form})
+
+def venda_list(request):
+    vendas = Venda.objects.all().order_by('-data_venda')
+    return render(request, 'venda/venda_list.html', {'vendas': vendas})
+
+def index(request):
+    return render(request, 'venda/index.html')

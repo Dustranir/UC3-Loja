@@ -11,3 +11,6 @@ def contato_create(request):
     else:
         form = ContatoForm()
     return render(request, 'contato/cadastro.html', {'form': form})
+
+def index(request):
+    return render(request, 'venda/index.html')

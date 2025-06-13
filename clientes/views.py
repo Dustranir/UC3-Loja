@@ -15,3 +15,6 @@ def cliente_create(request):
     else:
         form = ClienteForm()
     return render(request, 'clientes/cadastro.html', {'form': form})
+
+def index(request):
+    return render(request, 'clientes/index.html')

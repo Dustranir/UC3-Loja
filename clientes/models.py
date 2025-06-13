@@ -35,6 +35,7 @@ class Cliente(models.Model):
     email = models.EmailField(max_length=100, unique=True)
     nome_usuario = models.CharField(max_length=100, unique=True)
     senha = models.CharField(max_length=256)
+    estado_domicilio = models.CharField(max_length=2, choices=ESTADO_CHOICES)
 
 def __str__(self):
     return f"CPF: {self.cpf} - Nome: {self.nome} - Username: {self.username}"

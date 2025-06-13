@@ -1,4 +1,4 @@
 from django.contrib import admin
 from .models import Venda
 
-admin.site.register(venda)
+admin.site.register(Venda)
