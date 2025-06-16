@@ -2,7 +2,7 @@
 
 {% block content %}
     <h2>Clientes</h2>
-    <a href="{% url 'cliente_create' %}" class="btn btn-primary mb-3">+ Cadastrar Novo Cliente</a>
+    <a href="{% url 'cliente_create' %}" class="btn btn-primary mb-3"> Cadastrar Novo Cliente</a>
 
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
@@ -26,6 +26,7 @@
                 <td>{{ cliente.cidade }}</td>
                 <td>{{ cliente.genero }}</td>
                 <td>{{ cliente.email }}</td>
+                <td><a href="{% url 'cliente_delete' cliente.cpf %}" class="btn btn-danger mb-3">Excluir</a></td>
             </tr>
         {% endfor %}
         </tbody>

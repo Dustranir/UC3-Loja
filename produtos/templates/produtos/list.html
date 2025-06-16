@@ -1,46 +1,11 @@
  {% extends 'base.html' %}
-{% comment %}
-{% block content %}
-    <h2>Produtos</h2>
-    <a href="{% url 'produto_create' %}" class="btn btn-primary mb-3">+ Cadastrar Novo Produto</a>
 
-    <table class="table table-bordered table-striped">
-        <thead class="table-dark">
-            <tr>
-                <th>Código</th>
-                <th>Nome</th>
-                <th>Preço Compra</th>
-                <th>Preço Venda</th>
-                <th>Cor</th>
-                <th>Fabricação</th>
-                <th>Imagem</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for produto in produtos %}
-            <tr>
-                <td>{{ produto.id }}</td>
-                <td>{{ produto.nome }}</td>
-                <td>R$ {{ produto.preco_compra }}</td>
-                <td>R$ {{ produto.preco_venda }}</td>
-                <td>{{ produto.cor }}</td>
-                <td>{{ produto.data_fabricacao }}</td>
-                <td>{{ produto.imagem }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-{% endblock %} {% endcomment %}
-
-
+{% load static %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Lista de Produtos</h2>
-        <a href="{% url 'produto_create' %}" class="btn btn-success">+ Cadastrar Produto</a>
-    </div>
-
+        <a href="{% url 'produto_create' %}" class="btn btn-primary mb-3"> Cadastrar Novo Produto</a>
+        
     {% if produtos %}
         <div class="table-responsive">
             <table class="table table-striped table-hover align-middle">
