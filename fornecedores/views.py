@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Fabricante
 from .forms import FabricanteForm
 
@@ -18,3 +18,10 @@ def fornecedor_create(request):
 
 def index(request):
     return render(request, 'fornecedores/index.html')
+
+def fabricante_delete(request, pk):
+    fornecedor = get_object_or_404(Fabricante, pk=pk)
+    if request.method == 'POST':
+        fornecedor.delete()
+        return redirect('produto_list')  
+    return render(request, 'fornecedores/deletar_fornecedor.html', {'fornecedor': fornecedor})
