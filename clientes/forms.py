@@ -34,7 +34,7 @@ class ClienteForm(forms.ModelForm):
 
     class Meta:
         model = Cliente
-        fields = ['cpf', 'nome', 'endereco', 'telefone', 'estado_domicilio', 'cidade', 'genero', 'contato', 'email', 'nome_usuario', 'senha']
+        fields = ['cpf', 'nome', 'endereco', 'telefone', 'estado', 'cidade', 'genero', 'contato', 'email', 'nome_usuario', 'senha']
 
     def clean(self):
         cleaned_data = super().clean()
