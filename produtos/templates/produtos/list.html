@@ -13,7 +13,7 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">Preço</th>
+                        <th scope="col">Preço de Venda</th>
                         <th scope="col">Descrição</th>
                         <th scope="col" >Ações</th>
                     </tr>
@@ -23,7 +23,7 @@
                         <tr>
                             <td>{{ produto.codigo }}</td>
                             <td>{{ produto.nome }}</td>
-                            <td>R$ {{ produto.preco|floatformat:2 }}</td>
+                            <td>R$ {{ produto.preco_venda|floatformat:2 }}</td>
                             <td>{{ produto.descricao }}</td>
                             <td class="text-center">
                                 <!-- Botão de exclusão -->
