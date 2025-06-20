@@ -14,7 +14,7 @@ CORES = (
 class ProdutoForm(forms.ModelForm):
     class Meta:
         model = Produto
-        fields = ['codigo', 'nome', 'preco_compra', 'preco_venda', 'cor', 'data_fabricacao', 'imagem']
+        fields = ['codigo', 'nome', 'preco_compra', 'preco_venda', 'cor', 'data_fabricacao','descricao', 'imagem']
 
     def clean_nome(self):
         nome = self.cleaned_data['nome']

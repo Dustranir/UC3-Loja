@@ -8,7 +8,7 @@ def produto_list(request):
 
 def produto_create(request):
     if request.method == 'POST':
-        form = ProdutoForm(request.POST)
+        form = ProdutoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('produto_list')
